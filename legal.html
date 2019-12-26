@@ -1,0 +1,477 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="LegalMind - Powering Lawyers and Law Students" />
+    <meta property="og:description" content="The most flexible and intelligent litigation, research and file management system for lawyers." />
+    <link rel="canonical" href="https://www.legalmind.tech/" />
+    <link href="https://fonts.googleapis.com/css?family=Rajdhani|Roboto" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/png" href="assets/images/favicons.ico" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>ecell</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        ::placeholder {
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .row {
+            margin-left: 0;
+            margin-right: 0
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        #first {
+            background: black;
+            overflow-X: initial;
+        }
+
+        .signUp-btn {
+            padding: 10px 20px 10px 20px;
+            border-radius: 5px;
+            background-color:green;
+            color: white;
+            outline: none;
+            border-color: rgb(21, 123, 254);
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .signUp-btn:hover {
+            background-color: white;
+            color: black;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            transition: all 0.5s ease;
+            transition-property: background-color, color, box-shadow;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .imageResize {
+            height: 350px;
+            width: auto;
+        }
+
+        .textBox {
+            
+            padding: 8vh 8vw;
+        }
+
+        .line {
+            border-top: 1px solid #007bff;
+            width: 100px;
+        }
+
+        /*to change the chrome autofill default yellow color to white color*/
+
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px white inset;
+        }
+
+        /*to remove outline when user click on input box*/
+
+        input:focus,
+        select:focus,
+        textarea:focus,
+        button:focus {
+            outline: none;
+        }
+
+        button,
+        button:focus {
+            outline: none;
+            border: 0;
+            cursor: pointer;
+
+        }
+
+        .shadow {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        #first {
+            background-color:black;
+            background-size: cover;
+            width: auto
+        }
+
+        /* for bigger screens */
+
+        @media (min-width : 1200px) {
+            #first {
+                height: 114vh;
+            }
+
+            #contentGif {
+                margin-top: 25vh;
+                position: absolute;
+                height: auto
+            }
+
+            #gif {
+                height: 300px;
+                width: auto;
+            }
+
+            h1 {
+                font-size: 100px
+            }
+
+            #trapz {
+                position: absolute;
+                top: 105vh
+            }
+
+            #trapz-head {
+                font-size: 40px
+            }
+
+            .containerPadding {
+                padding: 6vh 10vw 6vh 10vw;
+                text-align: center;
+            }
+
+            .spl {
+                position: absolute;
+                left: 83vw
+            }
+
+            .spl2 {
+                position: absolute;
+                left: 68vw
+            }
+
+        }
+
+        /* for smaller screens */
+
+        @media (max-width : 1200px) {
+            #first {
+                height: 135vh;
+            }
+
+            li {
+                padding-top: 10px;
+                padding-bottom: 10px
+            }
+
+            #contentGif {
+                position: absolute;
+                margin-top: 15vh;
+                height: auto
+            }
+
+            #gif {
+                height: 180px;
+                width: auto;
+            }
+
+            h1 {
+                font-size: 30px
+            }
+
+            #trapz {
+                position: absolute;
+                top: 120vh;
+
+            }
+
+            #trapz-head {
+                font-size: 30px
+            }
+
+            .containerPadding {
+                padding: 0 10vw 4vh 10vw;
+                text-align: center;
+            }
+
+            .textBox {
+                text-align: left;
+                padding: 4vh 8vw;
+            }
+
+            #second {
+                margin-top: 10vh;
+            }
+
+       
+    </style>
+</head>
+<body style="background-color:#CCCCCC">
+    <!--//navigation bar -->
+    <div id="first">
+        <nav class="navbar navbar-expand-xl navbar-light fixed-top"
+        style="background-color: black; padding : 20px 20px 10px 0 ;">
+        <div id="legalMind"
+        style="height: auto; min-width : 200px; width : auto; border-top-right-radius: 35px; border-bottom-right-radius: 35px; background-color: green; padding-left: 10px; padding-right: 20px">
+        <a href="#">
+            <div style="height : auto ; width : auto;  display: inline-block;">
+            </div>
+            <div style="height : auto ; width : auto; vertical-align: middle; display: inline-block;">
+                <span style="line-height: 60px; font-size: 2em;color : white">E-CELL VIT</span>
+            </div>
+        </a>
+    </div>
+    <button id="drop" class="navbar-toggler" type="button" data-toggle="collapse"
+    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+    aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-left : 10px">
+    <ul class="navbar-nav mr-auto" style="font-size: 0.8em;">
+        <li class="nav-item active" style="padding-right: 15px; padding-left: 20px;">
+            <a class="nav-link" href="#second" style=" color : white;">EVENTS</a>
+        </li>
+                    
+                    <li class="nav-item" style="padding-right: 15px; padding-left: 20px; ">
+                        <a class="nav-link" target="blank" 
+                        style=" color : white;">TEAM</a>
+                    </li>
+                    
+                    <li class="nav-item" style="padding-right: 15px; padding-left: 20px;">
+                        <a class="nav-link" href="#getNotified" style=" color : white;">ABOUT US</a>
+                    </li>
+                    
+                   
+                <li class="nav-item" style="padding-right: 15px;">
+                    <a href="#getNotified" style="text-decoration : none;">
+                        <button class="signUp-btn spl"
+                        type="button" style="font-size: 1em;">CONTACT US
+                    </button>
+                </a>
+            </li>      
+                </ul>
+            </div>
+        </nav>
+        <div class="row" id="contentGif" background="black">
+            <div class="col-lg-6 col-xs-1
+            2" style="padding: 5vh 5vw 5vh 15vw; color : white">
+            <h1 style="font-family: 'Rajdhani', sans-serif;">
+                ENTREPRENEURSHIP CELL
+            </h1>
+            <h1 style="font-family: 'Rajdhani', sans-serif;">
+                VIT Vellore
+            </h1>
+            <h1 style="font-family: 'Roboto', sans-serif; font-size:16px; line-height: 24px;">
+                WE ARE A VIT STUDENT CLUB THAT AIMS AT
+				FOSTERING ENTREPRENEURIAL SPIRIT
+				AMONG THE STUDENTS AND PROVIDE
+				THEM PERFECT PLATFORM
+            </h1>
+                
+                <p style="font-family: 'Roboto', sans-serif; margin-top: 40px">
+                    
+                </p>
+                <div style=" margin-top : 20px">
+                </div>
+            </div>
+            <div id="gif-container" class="col-lg-6 col-xs-12" style="text-align: center; padding-top : 20px;">
+                
+            </div>
+        </div>
+        <div class="row">
+            <div id="trapz" style=" text-align: center; left : 50%; transform: translateX(-50%)">
+                <p id="trapz-head" style="font-family: 'Rajdhani', sans-serif;color:white;">OUR FLAGSHIP EVENTS</p>
+            </div>
+        </div>
+
+    </div>
+    <div class="container-fluid" id="second">
+            <!--Second Part INVERT-->
+            <div class="row containerPadding">
+                <div class="col-xs-12 col-lg-6 order-lg-2 boxIdentifier">
+                </div>
+                <div class="col-xs-12 col-lg-12 order-lg-6 boxIdentifier textBox">
+                    <p style="font-size: 4.5em; font-family: 'Rajdhani', sans-serif; font-weight: bold">
+                        Start Up,VIT
+                    </p>
+                    <p class="line"></p>
+                    <p style="color : #777777; font-family: 'Roboto', sans-serif; font-size: 1.5rem; margin-bottom: 25px">
+                        Are you solving a real world problem?
+Do you have a promising technology product idea?
+Does your idea solve a social challenge or drudgery?
+Do you have an unbeatable team? If yes, then this is the time.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row containerPadding">
+                <div class="col-xs-12 col-lg-6 boxIdentifier">
+                    
+                </div>
+                <div class="col-xs-30 col-lg-30 boxIdentifier textBox">
+                    <p style="font-size: 4.5em; font-family: 'Rajdhani', sans-serif; font-weight: bold">
+                        HackerTech
+                    </p>
+                    <p class="line"></p>
+                    <p style="color : #777777; font-family: 'Roboto', sans-serif; font-size: 1.5rem; margin-bottom: 25px">
+                        HackerTech is a National Level Hackathon organised annually at VIT Vellore. HackerTech provides the students the scope to expand their horizon, ideate, brainstorm and unravel a solution for the given problem statements. To provide the initial boost a product requires to establish themselves as a startup, we will fund every viable prototype that stands unbeatable in every aspect.
+                    </p>
+                </div>
+            </div>
+			
+            <div class="row containerPadding">
+                <div class="col-xs-12 col-lg-6 order-lg-2 boxIdentifier">
+                    
+                </div>
+                <div class="col-xs-12 col-lg-12 order-lg-1 boxIdentifier textBox">
+                    <p style="font-size: 4.5em; font-family: 'Rajdhani', sans-serif; font-weight: bold">
+                        MedTech Challenge
+                    </p>
+                    <p class="line"></p>
+                    <p style="color : #777777; font-family: 'Roboto', sans-serif; font-size: 1.5rem; margin-bottom: 25px">
+                        MedTech Challenge involves students learning a great deal about the medical sector and came up with revolutionising ideas that had amazing potential. The teams pitch their ideas in front of the distinguished guests and jury members. Their projects gained the initial boost and MedTech Challenge emerges as the start of their new journey.
+                    </p>
+                </div>
+            </div>
+    <!-- New Footer  -->
+    <div class="container-fluid" id="getNotified"
+    style="background-color : green;color: white;padding-top:8vh;font-size : 18px">
+
+    <div class="row">
+        <div class="col-xs-12 col-lg-6 order-lg-2">
+            <div class="row">
+                <div class="col-lg col-md-3"></div>
+                <div class="col-lg-8 col-md-6 shadow"
+                style=" height : auto; padding: 30px 10px 40px 10px; border-radius : 20px; background-color: rgba(20,150,50); color : black">
+                <div style="text-align : center; margin-bottom: 30px">
+                    <h2 style="font-family: 'Rajdhani', sans-serif;">GET IN TOUCH</h2>
+                </div>
+                <div style="text-align : center">
+
+                    <input oninput="nameValidate(event)" onfocus="fieldReset(event)" class="shadow"
+                    type="text" id="name"
+                    style="width : 90%; border-radius : 40px; margin-bottom: 10px; text-align: center; padding: 10px; border: none; font-family: 'Roboto', sans-serif;"
+                    name="name" placeholder="Name">
+
+                    <input oninput="emailVerify(event)" onfocus="fieldReset(event)" type="email"
+                    class="shadow" id="email"
+                    style="width : 90%; border-radius : 40px; margin-bottom : 10px; text-align: center; padding : 10px; border: none; font-family: 'Roboto', sans-serif;"
+                    name="email" placeholder="Email">
+
+                    <input oninput="verifyPhoneNumber(event)" onfocus="fieldReset(event)" type="number"
+                    class="shadow" id="phoneNumber"
+                    style="width : 90%; border-radius : 40px; margin-bottom : 20px; text-align: center; padding : 10px; border: none; font-family: 'Roboto', sans-serif;"
+                    name="phoneNumber" placeholder="Phone Number">
+
+                    <div style="text-align : center">
+                        <button id="saveDataBtn" class="shadow" onclick="validation()"
+                        style="width : 90%; border-radius : 40px; padding: 10px; background-color: black; color: white; "onclick="alert('The only thing you did right today');">	
+                        Submit
+                    </button>
+                </div>
+
+                <p style="margin-top : 20px; font-family: 'Roboto', sans-serif;"></p>
+
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3"></div>
+    </div>
+</div>
+
+<div class="col-xs-12 col-lg-6 order-lg-1" style="transform: translateY(-50%); margin-top : 200px">
+    <p style="text-align : center; ">
+        REACH OUT TO E-CELL,VIT
+    </p>
+    <p style="text-align : center; ">
+        Find us here : <a href="https://www.legalmind.tech "
+        style="text-decoration:none; color:white; ">www.ecellvit.in</a>
+    </p>
+    <a style="text-decoration : none; color : white" href="mailto:contact@findmind.in">
+        <p style="text-align : center; ">Contact us: ecellvit@gmail.com</p>
+        <div class="icons " style="text-align: center; font-size: 36px;">
+            <a href="https://www.facebook.com/lfindmind.legal/" target="_blank "><i
+                class="fab fa-facebook" style="color: white;"></i></a>
+                <a href="https://www.twitter.com/teamlegalmind/" target="_blank "><i class="fab fa-twitter"
+                 style="color: white;"></i></a>
+                 <a href="https://www.instagram.com/teamlegalmind/" target="_blank "><i
+                    class="fab fa-instagram" style="color: white;"></i></a>
+                    <a href="https://medium.com/team-legalmind" target="_blank "><i class="fab fa-medium"
+                        style="color: white;"></i></a>
+                        <a href="https://www.linkedin.com/company/legalmind/" target="_blank "><i
+                            class="fab fa-linkedin" style="color: white;"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Copyright -->
+            <div class="container-fluid" style="background-color : green;">
+                <div class="row" style="padding-top: 40px; font-family: 'Roboto', sans-serif;color:white">
+                    <div class="col-lg-12">
+                        <p style="text-align: center">
+                            <i class="far fa-copyright" style="padding-top : 4px; "></i><span
+                            style="padding-left : 5px; font-size: 1.1rem">NIRMIT JATANA </span>
+                        </p>
+                    </div>
+                </div>
+			</div>
+    <script>
+        $(document).ready(function () {
+            let clicked = true;
+            var scroll_pos = 0;
+
+            $(document).scroll(function () {
+                scroll_pos = $(this).scrollTop();
+                if (scroll_pos > 100) {
+                  $("nav").css('background-color', 'black');
+                  $("nav").css('padding', '0 20px 0 0');
+                  $("#legalMind").css('background-color', 'green')
+              } else {
+                  if ($("#drop").is(":visible")) {
+                    $("nav").css('background-color', 'black');
+                    $("nav").css('padding', '20px 20px 10px 0');
+                    $("#legalMind").css('background-color', 'green')
+                } else {
+                    $("nav").css('background-color', 'black');
+                    $("nav").css('padding', '20px 20px 10px 0');
+                    $("#legalMind").css('background-color', 'green')
+                }
+            }
+        });
+            $(".navbar-toggler").click(() => {
+                if (clicked) {
+                  $("nav").css('background-color', 'black');
+                  clicked = false;
+              } else {
+                if ($(document).scrollTop() > 100) {
+                  $("nav").css('background-color', 'black');
+              } else {
+                $("nav").css('background-color', 'transparent');
+            }
+            clicked = true;
+        }
+    })
+
+        });
+    </script>
+
+
+
+</body>
+
+</html>
